@@ -1,13 +1,18 @@
 /* fonts */
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400|Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Grand+Hotel|Indie+Flower&display=swap');
 /* css variables */
 :root {
-  --primaryColor: #3DA9BA;
+  --primaryColor: #F49E4C;
+  --primaryLight:  #F4A358; 
+  --primaryDark: #F49E4C;
+  --anotherLite: #EDBF84;
   --mainWhite: #fff;
   --offWhite: #f7f7f7;
   --mainBlack: #222;
   --mainGrey: #ececec;
   --darkGrey: #afafaf;
+  --veryDark:#47C6C6;
   --mainTransition: all 0.3s linear;
   --mainSpacing: 0.25rem;
   --lightShadow: 2px 5px 3px 0 rgba(0, 0, 0, 0.25);
@@ -35,6 +40,7 @@ img:not(.nav-logo) {
   width: 100%;
   display: block;
 }
+
 h1,
 h2,
 h3,
@@ -45,6 +51,15 @@ h6 {
   margin-bottom: 1.25rem;
   letter-spacing: var(--mainSpacing);
 }
+.qo{
+  font-size: 2.5rem;
+  text-transform: capitalize;
+  margin-bottom: 2.25rem;
+  letter-spacing: var(--mainSpacing);
+  font-weight: bold;
+  font-family: 'Indie Flower', cursive;
+}
+
 h1 {
   font-size: 3.3rem;
 }
@@ -78,6 +93,9 @@ a {
   -webkit-transition: var(--mainTransition);
   transition: var(--mainTransition);
   cursor: pointer;
+}
+.btn-white{
+  border-color: var(--anotherLite);
 }
 .btn-white:hover {
   background: var(--mainWhite);
@@ -122,9 +140,11 @@ a {
 /*************** end of navbar **********************/
 /*************** hero **********************/
 .hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url("../images/md-chowdhury-bc.jpeg") center/cover no-repeat;;
   min-height: calc(100vh - 62px);
-  background: var(--primaryColor);
-  display: -webkit-box;
+  /* background: var(--primaryColor);
+  display: -webkit-box; */
   display: flex;
   -webkit-box-pack: center;
   justify-content: center;
@@ -133,13 +153,15 @@ a {
 }
 .hero-banner {
   text-align: center;
-  color: var(--mainWhite);
+  color: var(--offWhite);
   padding: 0 2rem;
 }
 .hero-title {
   text-transform: uppercase;
   margin-bottom: 2rem;
-  letter-spacing: 0.4rem;
+  letter-spacing: .4rem;
+  color: var(--anotherLite);
+  font-family: 'Indie Flower', cursive;
 }
 .hero-text {
   width: 85%;
@@ -150,19 +172,21 @@ a {
 }
 @media screen and (min-width: 768px) {
   .hero {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(63, 208, 212, 0.7)), to(rgba(0, 0, 0, 0.7))),
-      url("../images/main.jpeg") center/cover no-repeat fixed;
-    background: linear-gradient(rgba(63, 208, 212, 0.7), rgba(0, 0, 0, 0.7)),
-      url("../images/main.jpeg") center/cover no-repeat fixed;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))),
+      url("../images/main.jpeg") center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("../images/md-chowdhury-bc.jpeg") center/cover no-repeat;
   }
   .hero-title {
     font-size: 4.5rem;
+    letter-spacing: 1rem;
   }
   .hero-text {
     width: 70%;
   }
 }
 /*************** end of hero **********************/
+
 /*************** about  **********************/
 .about {
   background: var(--mainWhite);
@@ -210,7 +234,7 @@ a {
   }
 }
 /*************** end of about **********************/
-/*************** services **********************/
+/*************** Skills **********************/
 .service {
   text-align: center;
   margin-bottom: 3rem;
@@ -219,11 +243,12 @@ a {
   background: var(--primaryColor);
   padding: 0.5rem;
   display: inline-block;
-  font-size: 2rem;
+  font-size: 1rem;
   margin-bottom: 1.5rem;
 }
 .service-title {
   text-transform: uppercase;
+  /* color: var(--primaryDark); */
 }
 .service-text {
   width: 80%;
@@ -274,6 +299,7 @@ a {
   background: var(--mainWhite);
 }
 .tour-card {
+  background: var(--offWhite);
   margin-bottom: 4rem;
   box-shadow: var(--lightShadow);
   -webkit-transition: var(--mainTransition);
@@ -285,13 +311,18 @@ a {
 .tour-img-container {
   position: relative;
 }
+.tour-img{
+  width: 100%;
+}
 .tour-date {
   position: absolute;
   top: 0;
   left: 0;
   background: var(--primaryColor);
   text-transform: capitalize;
-  padding: 0.25rem 0.5rem;
+  font-weight: 400;
+  /* letter-spacing: var(--mainSpacing); */
+  padding: .05rem .95rem;
 }
 .tour-footer {
   padding: 1.2rem 1.5rem;
@@ -300,7 +331,7 @@ a {
   text-transform: capitalize;
 }
 .tour-country {
-  color: var(--primaryColor);
+  color: var(--veryDark);
   text-transform: capitalize;
 }
 .tour-info {
@@ -392,7 +423,7 @@ a {
 }
 /*************** end of gallery **********************/
 /*************** deals **********************/
-.input-group {
+/* .input-group {
   width: 80vw;
   max-width: 600px;
   margin: 0 auto;
@@ -444,8 +475,79 @@ a {
 .btn-submit:hover {
   color: var(--mainWhite);
   background: var(--primaryColor);
-}
+} */
 /*************** end of deals **********************/
+
+/* **********************contact form********************* */
+/* clearfix */
+
+/* it is another default value to fix the bigger screen problem, specially when i am using float, i need to add the clearfix word with my section-classes. */
+.clearfix::after, 
+.clearfix::before{
+ content: "";
+ clear: both;
+ display: table;
+}
+.contact-section-center{
+  padding: 4rem 0;
+  width: 80vw;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.contact{
+  padding-top: 2rem;
+  background: var(--mainGrey);
+ }
+ .contact-item{
+  margin-bottom: 3rem;
+ }
+ .contact-title{
+  color: var(--primaryColor);
+  font-family: var(--slantedText);
+  text-transform: uppercase;
+  letter-spacing: calc(var(--letterSpacing)*2);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+ }
+ .contact-text{
+  text-transform: uppercase;
+  font-size: 1.2rem;
+ }
+ .email{
+  text-transform: lowercase;
+  font-size: 1.2rem;
+ }
+ 
+ .form-control{
+   background: transparent;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid var(--primaryColor);
+  outline: none;
+  margin: 2rem 0;
+  padding: 1.3rem 0;
+  font-size: 0.85rem;
+  font-weight: bold;
+ }
+ 
+ .form-control::placeholder{
+  color: var(--primaryColor);
+  text-transform: uppercase;
+  letter-spacing: var(--letterSpacing);
+ }
+ @media screen and (min-width: 992px){
+  .contact-info, .contact-form{
+   float: left;
+   width: 50%;
+   padding: 0 1rem;
+  }
+  .contact-info{
+   padding-top: 3.5rem;
+  }
+ }
+/* ***************** end of contact form********************* */
+
 /*************** footer **********************/
 .footer {
   background: var(--mainBlack);
@@ -490,7 +592,7 @@ a {
 .copyright {
   text-transform: capitalize;
   letter-spacing: var(--mainSpacing);
-  color:var(--primaryColor);
+  color:var(--primaryColor)
 }
 /*************** end of footer **********************/
 /*************** navbar **********************/
